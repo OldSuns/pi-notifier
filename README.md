@@ -9,15 +9,8 @@
 
 Windows desktop notifications for [Pi](https://github.com/earendil-works/pi-coding-agent). Get notified when the agent finishes, when API errors occur, or when tools fail — without leaving your current window.
 
-<!-- ponytail: screenshot placeholder, replace with an actual toast capture when available -->
-
-<p align="center">
-  <sub><em>Toast preview placeholder — capture a real screenshot and drop it here.</em></sub>
-</p>
-
 ## Contents
 
-- [What changed vs upstream](#what-changed-vs-upstream)
 - [Features](#features)
 - [Install (local path)](#install-local-path)
 - [Configure](#configure)
@@ -25,14 +18,6 @@ Windows desktop notifications for [Pi](https://github.com/earendil-works/pi-codi
 - [Requirements](#requirements)
 - [How it works](#how-it-works)
 - [License](#license)
-
-## What changed vs upstream
-
-- **HiDPI / DPI-aware rendering.** The upstream PowerShell toast is not DPI-aware, so on high-DPI (scaling >100%) displays the popup is bitmap-stretched and looks blurry. This fork calls `SetProcessDPIAware()` before creating the WinForms `Form`, so the toast renders at native DPI — crisp text and rounded corners.
-  - Change is one line in `notifyWindows()`: `[void][NotifWin32]::SetProcessDPIAware()` added before `$f = New-Object System.Windows.Forms.Form`, plus the matching `[DllImport("User32.dll")]` on the `NotifWin32` type.
-  - Uses `SetProcessDPIAware` (system-DPI-aware). Sufficient for a fixed 5s toast on a single high-DPI display; per-monitor v2 would help only if you move the toast across mixed-DPI monitors.
-
-Everything else is unchanged from upstream v1.0.3.
 
 ## Features
 
