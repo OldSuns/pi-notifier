@@ -1,5 +1,5 @@
 {
-  "name": "pi-notifier",
+  "name": "@oldsuns/pi-notifier",
   "version": "1.0.4",
   "description": "Windows desktop notifications for Pi (local fork with HiDPI / DPI-aware fix)",
   "keywords": [
@@ -9,12 +9,20 @@
     "desktop",
     "hidpi"
   ],
-  "author": "local",
+  "author": "OldSuns",
   "repository": {
     "type": "git",
-    "url": "https://github.com/steven-rothwell/pi-utilities"
+    "url": "https://github.com/OldSuns/pi-notifier.git"
   },
   "license": "MIT",
+  "files": [
+    "notifier.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "pi": {
     "extensions": ["./notifier.ts"]
   },
