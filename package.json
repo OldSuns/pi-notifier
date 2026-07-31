@@ -1,6 +1,6 @@
 {
   "name": "@oldsuns/pi-notifier",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Windows desktop notifications for Pi (local fork with HiDPI / DPI-aware fix)",
   "keywords": [
     "pi-package",
@@ -24,7 +24,9 @@
     "access": "public"
   },
   "pi": {
-    "extensions": ["./notifier.ts"]
+    "extensions": [
+      "./notifier.ts"
+    ]
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",
